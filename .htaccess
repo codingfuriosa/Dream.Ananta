@@ -1,0 +1,7 @@
+# Ananta has one address only: https://dreamananta.com
+# www.dreamananta.com and plain http:// are sent there with a permanent (301) redirect.
+# The path and the ad query (?utm_source=...&gclid=...&contactid=...) are kept, so tracking is not lost.
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.dreamananta\.com$ [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://dreamananta.com%{REQUEST_URI} [L,R=301]

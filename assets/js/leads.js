@@ -2,6 +2,13 @@
  'use strict';
  var config=window.ANANTA_LEADS||{},accessKey='ananta_access',receiptKey='ananta_enquiry_receipt';
  var dialog=document.getElementById('brochure-dialog');
+ // Ad tracking from the landing URL, kept for this visit so it is still there when a form is sent.
+ // Names match what the CRM's /webhook/website_form_data saves into google_lead_details.
+ var trackingKeys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_campaign_id','utm_adgroup_id','utm_ad_id','utm_ad_account_id','campaign_id','adgroup_id','ad_id','gclid','gbraid','fbclid','oppref','keyword','match_type','device','device_model','network','placement','creative','adposition','target','target_id','loc_interest_ms','loc_physical_ms','source_id','extension_id'];
+ var tracking={},query=new URLSearchParams(location.search),fromUrl={};
+ try{tracking=JSON.parse(sessionStorage.getItem('ananta_tracking'))||{};}catch(e){}
+ trackingKeys.forEach(function(k){var v=query.get(k);if(v)fromUrl[k]=v;});
+ if(Object.keys(fromUrl).length){tracking=fromUrl;try{sessionStorage.setItem('ananta_tracking',JSON.stringify(tracking));}catch(e){}}
  // One enquiry, from either form, unlocks the brochure and the floor plans on this browser:
  // localStorage first, a year-long cookie as backup.
  function unlocked(){
@@ -84,13 +91,20 @@
    var label=submit.textContent;submit.disabled=true;submit.textContent='Sending your enquiry…';
    var controller=new AbortController(),timer=setTimeout(function(){controller.abort();},20000);
    try{
-    var payload={name:values.name,mobile:values.mobile,email:values.email,configuration:selected?selected.dataset.v:null,consent:true,intent:form.dataset.intent,project:'Ananta at Dream Gurukul',source:'ananta-landing',page_url:location.href};
-    var response=await fetch(config.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
+    // The CRM keeps Indian numbers as 10 digits; other countries keep their full code.
+    var digits=values.mobile.replace(/\D/g,'');
+    var contact=values.mobile.indexOf('+91')===0?digits.slice(-10):digits;
+    var intentLabel={site_visit:'Site Visit Form',brochure:'Brochure Form',floor_plans:'Floor Plans Form'}[form.dataset.intent]||'Website Form';
+    var remarks=[intentLabel,selected?selected.dataset.v:null].filter(Boolean).join(' | ');
+    // Form-encoded (not JSON) so the browser sends it straight away, with no CORS preflight.
+    var body=new URLSearchParams(Object.assign({},tracking,{apikey:config.apikey,project:config.project,name:values.name,contact:contact,email:values.email,remarks:remarks,utm_form_name:intentLabel}));
+    var response=await fetch(config.endpoint,{method:'POST',headers:{'Accept':'application/json'},body:body,signal:controller.signal});
     if(!response.ok)throw new Error('Lead service rejected request');
-    var result=await response.json();if(result.success!==true)throw new Error('Lead not confirmed');
+    // The CRM can reply success:true without creating a lead (e.g. project name mismatch), so also require the lead id.
+    var result=await response.json();if(result.success!==true||!result.lead)throw new Error('Lead not confirmed');
     // With a destination set, only its confirmed response unlocks the brochure.
     complete();
-   }catch(error){status.textContent='We could not confirm your enquiry. Please try again or call '+(matchMedia('(max-width:700px)').matches?'+91 73531 50777':'+91 73531 58222')+'.';}
+   }catch(error){status.textContent='We could not confirm your enquiry. Please try again or call '+(window.ANANTA_CALL?window.ANANTA_CALL.label:(matchMedia('(max-width:700px)').matches?'+91 73531 50777':'+91 73531 58222'))+'.';}
    finally{clearTimeout(timer);submit.disabled=false;submit.textContent=label;}
   });
  });

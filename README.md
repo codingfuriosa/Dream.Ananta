@@ -16,7 +16,7 @@ Palette from the brochure: midnight navy, rose-amber horizon glow, golden-hour g
 ## Enquiries
 - One enquiry (site visit or brochure popup) unlocks both the brochure and the floor plans on that browser for a year. Until then the plans are shown hazy behind a View plans button.
 - Phone numbers are accepted from any country. A bare 10-digit number is saved as +91.
-- **Leads are not sent anywhere yet.** `endpoint` in `assets/js/lead-config.js` is empty, so the form only completes the visitor's journey (unlock and thank-you page). To capture leads, set `endpoint` to a URL that accepts a JSON POST (`name, mobile, email, configuration, consent, intent, project, source, page_url`) and replies `{ "success": true }`. Cross-origin endpoints must allow the site's origin (CORS). Once set, the thank-you page also tells visitors an advisor will call.
+- **Leads go to the Jain Group CRM.** `assets/js/lead-config.js` posts each enquiry form-encoded to the realtybucket.com webhook with the API key and project name `Ananta`; `leads.js` also forwards the ad parameters from the landing URL (utm_*, gclid, fbclid and so on) kept in sessionStorage. Clear `endpoint` to stop sending: the form then only unlocks the brochure and shows the thank-you page. `call-tracking.js` swaps every call button to the number in `?contactid=` for the visit. `.htaccess` sends www and plain http to https://dreamananta.com (Apache only).
 - The brochure and plan images are public files; the unlock is a lead-generation flow, not secure access.
 
 ## Tracking
