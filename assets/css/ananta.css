@@ -87,25 +87,9 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.2}
 .menu-open .site-header::after{opacity:0}
 .site-header{position:sticky;top:0;z-index:35;background:var(--night);backdrop-filter:saturate(1.2) blur(12px);-webkit-backdrop-filter:saturate(1.2) blur(12px);color:var(--on-dark);transition:transform .5s var(--ease),background .5s var(--ease)}
 .header-inner{max-width:1440px;margin:auto;padding:0 28px 0 48px;min-height:var(--header);display:flex;align-items:center;gap:40px}
-.brand img{width:156px}
-/* Sunrise. The logo is the untouched original (deep green, gold, grey), so the dark bar brings its own light for it: warm
-   ivory from the screen's left edge sits behind the logo, then passes through the site's horizon colours (champagne,
-   amber, rose) into the night blue before the menu, like first light. A gold hairline follows the light along the base. */
-.site-header{overflow-x:clip}
-.brand{--pad:clamp(28px,3.4vw,72px);--s:calc(100% - 800px - var(--pad));position:relative;z-index:0;flex:none;align-self:stretch;display:flex;align-items:center;line-height:0;padding-right:var(--pad)}
-/* Two colours, one long gradient: warm ivory behind the logo melting into the night blue across the bar. It eases in
-   at the logo's edge (no seam), is mostly night by the first menu link (so the menu stays readable), then takes a long
-   slow tail to pure night. Every step is a mix of the same two colours, blended in OKLCH so it never turns grey-mud. */
-.brand::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:-100vw;right:-760px;pointer-events:none;
-  background:linear-gradient(90deg,#f6ecd8 var(--s),
-    color-mix(in oklch,#0c1020 8%,#f6ecd8) calc(var(--s) + 40px),color-mix(in oklch,#0c1020 25%,#f6ecd8) calc(var(--s) + 80px),
-    color-mix(in oklch,#0c1020 45%,#f6ecd8) calc(var(--s) + 120px),color-mix(in oklch,#0c1020 62%,#f6ecd8) calc(var(--s) + 160px),
-    color-mix(in oklch,#0c1020 75%,#f6ecd8) calc(var(--s) + 220px),color-mix(in oklch,#0c1020 85%,#f6ecd8) calc(var(--s) + 320px),
-    color-mix(in oklch,#0c1020 92%,#f6ecd8) calc(var(--s) + 460px),color-mix(in oklch,#0c1020 97%,#f6ecd8) calc(var(--s) + 620px),#0c1020 100%)}
-.menu-toggle,.header-visit,.desktop-nav{position:relative;z-index:1}
-.desktop-nav a{text-shadow:0 0 12px #0c1020b3,0 1px 2px #0c1020cc}
-.brand::after{content:'';position:absolute;z-index:-1;left:-100vw;right:-760px;bottom:0;height:1px;pointer-events:none;
-  background:linear-gradient(90deg,#c99a4c calc(100% - 790px),calc(100% - 640px),#c99a4c00 100%)}
+.brand img{width:132px}
+/* Full night-blue bar with the white Ananta logo */
+.brand{display:block;flex:none;line-height:0}
 .brand img{display:block;height:auto}
 .desktop-nav{margin-left:auto;display:flex;gap:34px}
 .desktop-nav a{position:relative;padding:10px 0;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--on-dark-muted);transition:color .3s}
@@ -480,13 +464,7 @@ h2 em,h3 em{padding-right:.06em;background:linear-gradient(100deg,#7d5a1c 0%,var
   .container{width:calc(100% - 40px)}
   .section{padding:80px 0}
   .header-inner{padding:0 20px}
-  .brand img{width:140px}
-  /* Phones: the same two colours, but the night arrives much sooner after the logo, so the bar reads dark */
-  .brand{--pad:22px}
-  .brand::before{background:linear-gradient(90deg,#f6ecd8 calc(100% - 778px),
-    color-mix(in oklch,#0c1020 18%,#f6ecd8) calc(100% - 756px),color-mix(in oklch,#0c1020 45%,#f6ecd8) calc(100% - 732px),
-    color-mix(in oklch,#0c1020 68%,#f6ecd8) calc(100% - 706px),color-mix(in oklch,#0c1020 82%,#f6ecd8) calc(100% - 672px),
-    color-mix(in oklch,#0c1020 91%,#f6ecd8) calc(100% - 620px),color-mix(in oklch,#0c1020 97%,#f6ecd8) calc(100% - 540px),#0c1020 calc(100% - 440px))}
+  .brand img{width:112px}
   .site-header .header-visit{display:none}
   .menu-toggle{margin-left:auto}
   .section-top{display:block;margin-bottom:36px}
