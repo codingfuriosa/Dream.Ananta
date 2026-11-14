@@ -1,0 +1,34 @@
+# robots.txt for https://dreamananta.com/
+# Search engines and AI assistants are welcome, so Dream Ananta can be cited from its official site.
+# AI summary of the project: https://dreamananta.com/llms.txt
+
+User-agent: *
+Allow: /
+
+# Search and answer engines named explicitly (all already allowed by the rule above)
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://dreamananta.com/sitemap.xml

@@ -87,15 +87,11 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.2}
 .menu-open .site-header::after{opacity:0}
 .site-header{position:sticky;top:0;z-index:35;background:var(--night);backdrop-filter:saturate(1.2) blur(12px);-webkit-backdrop-filter:saturate(1.2) blur(12px);color:var(--on-dark);transition:transform .5s var(--ease),background .5s var(--ease)}
 .header-inner{max-width:1440px;margin:auto;padding:0 28px 0 48px;min-height:var(--header);display:flex;align-items:center;gap:40px}
-.brand img{width:156px}
-/* Dawn light. The logo is the untouched original (deep green, gold, grey), so the dark bar brings its own light for it:
-   a warm champagne glow enters from the screen's left edge, sits full-height behind the logo and fades into the navy
-   before the menu, like first light on the horizon */
-.site-header{overflow-x:clip}
-.brand{position:relative;z-index:0;align-self:stretch;display:flex;align-items:center;line-height:0;padding-right:clamp(26px,2.6vw,48px)}
-.brand::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:-100vw;right:-72px;pointer-events:none;
-  background:linear-gradient(90deg,#efe2c6 0,#f6ecd8 calc(100% - 300px),#f3e6cbee calc(100% - 150px),#e9d6ae80 calc(100% - 82px),#d9bd8a26 calc(100% - 34px),#0c102000 100%)}
-.brand::after{content:'';position:absolute;z-index:-1;left:-100vw;right:-72px;bottom:0;height:1px;pointer-events:none;background:linear-gradient(90deg,#c99a4c 0,#c99a4ccc calc(100% - 150px),#c99a4c00 100%)}
+.brand img{width:140px}
+/* Ivory nameplate. The logo is the untouched original (deep green, gold, grey), drawn for light backgrounds, so it sits
+   on a small ivory plaque with a gold rim inside the dark bar: crisp in its own colours, the bar stays night blue */
+.brand{position:relative;z-index:0;flex:none;justify-self:start;display:block;line-height:0;padding:clamp(6px,.5vw,9px) clamp(12px,1vw,16px);border-radius:7px;
+  background:linear-gradient(180deg,#fdf9f0 0%,#f4e9d3 100%);box-shadow:0 0 0 1px #c99a4cc7,inset 0 1px 0 #ffffffcc,0 12px 26px -16px #000000d9}
 .brand img{display:block;height:auto}
 .desktop-nav{margin-left:auto;display:flex;gap:34px}
 .desktop-nav a{position:relative;padding:10px 0;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--on-dark-muted);transition:color .3s}
@@ -470,7 +466,7 @@ h2 em,h3 em{padding-right:.06em;background:linear-gradient(100deg,#7d5a1c 0%,var
   .container{width:calc(100% - 40px)}
   .section{padding:80px 0}
   .header-inner{padding:0 20px}
-  .brand img{width:140px}
+  .brand img{width:116px}
   .site-header .header-visit{display:none}
   .menu-toggle{margin-left:auto}
   .section-top{display:block;margin-bottom:36px}

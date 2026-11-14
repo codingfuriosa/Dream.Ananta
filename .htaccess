@@ -5,3 +5,32 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.dreamananta\.com$ [NC,OR]
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://dreamananta.com%{REQUEST_URI} [L,R=301]
+
+# Browser caching: returning visitors reuse images, fonts, CSS and JS instead of downloading them again.
+# File names don't change when a file is updated, so the times are moderate; HTML is always checked for a newer copy.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/pdf "access plus 7 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|jpe?g|png|svg|woff2)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  <FilesMatch "\.html?$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+# llms.txt is plain UTF-8 text (it contains ₹)
+AddType "text/plain; charset=utf-8" .txt
