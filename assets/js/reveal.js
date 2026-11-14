@@ -10,11 +10,11 @@
       entry.target.classList.add('is-in');
       observer.unobserve(entry.target);
     });
-  }, {rootMargin: '0px 0px -8% 0px', threshold: 0.08});
+  }, {rootMargin: '0px 0px 15% 0px', threshold: 0});
   targets.forEach(function (el) {
-    // Siblings in a row arrive one after another.
+    // Siblings in a row arrive one after another, close together.
     var index = Array.prototype.indexOf.call(el.parentNode.children, el);
-    el.style.setProperty('--reveal-delay', Math.min(index, 5) * 90 + 'ms');
+    el.style.setProperty('--reveal-delay', Math.min(index, 3) * 50 + 'ms');
     el.classList.add('reveal');
     observer.observe(el);
   });

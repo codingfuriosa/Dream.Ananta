@@ -409,7 +409,8 @@ h2 em,h3 em{padding-right:.06em;background:linear-gradient(100deg,#7d5a1c 0%,var
 :is(.portrait,.gallery-image,.amenity):hover::before{inset:10px;border-color:#f5dfb399}
 
 /* Reveal on scroll (only once JS confirms it can run) */
-.reveal-ready .reveal{opacity:0;transform:translateY(24px);filter:blur(6px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease),filter 1.2s var(--ease);transition-delay:var(--reveal-delay,0ms)}
+/* Quick, light fade-up: starts just before a section scrolls into view, so photos never look like they are loading */
+.reveal-ready .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:var(--reveal-delay,0ms)}
 .reveal-ready .reveal.is-in{opacity:1;transform:none;filter:none}
 /* The overview facts arrive quickly, one close behind another */
 .reveal-ready .project-facts>.reveal{transition-duration:.55s;transition-delay:calc(var(--reveal-delay,0ms) * .35)}
