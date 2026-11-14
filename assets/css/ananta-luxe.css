@@ -2,15 +2,15 @@
    Switch it off by removing <link rel="stylesheet" href="assets/css/ananta-luxe.css"> from index.html;
    the page works and looks complete without it. */
 
-/* 1. Arrival: the original ANANTA mark on warm ivory (the colours it was drawn for), a gold horizon draws beneath it,
-   then the curtain lifts onto the evening hero */
+/* 1. Arrival: the night opens on the original ANANTA mark. A warm horizon glow (ivory at its heart, then the site's
+   amber and rose, then night) lights the logo in its own colours; a horizon draws beneath it, then the curtain lifts */
 main::before{content:'';position:fixed;inset:0;z-index:300;pointer-events:none;
-  background:url('../images/web/ananta-logo.webp') center calc(50% - 34px)/min(240px,56vw) auto no-repeat,
-    radial-gradient(ellipse 60% 42% at 50% 46%,#fffaf0 0%,#fbf3e3 40%,#f5e8cf00 75%),
-    linear-gradient(180deg,#fcf8f1 0%,#f8efdd 60%,#f2e2c3 100%);
+  background:url('../images/web/ananta-logo.webp') center calc(50% - 34px)/min(230px,52vw) auto no-repeat,
+    radial-gradient(ellipse min(360px,76vw) min(165px,36vw) at 50% calc(50% - 30px),#fbf3e2 0%,#f8ecd5 24%,#f3e1c3eb 36%,#eed6b6b8 46%,#e8c8ab78 56%,#e2b9a640 67%,#dcaaa41a 79%,#d8a1a308 90%,#d8a1a300 100%),
+    radial-gradient(ellipse 55% 30% at 50% 58%,#e09ca538,#f0b56a12 45%,transparent 72%),var(--night);
   animation:luxe-curtain 1.3s .05s var(--ease) both}
 main::after{content:'';position:fixed;z-index:301;top:calc(50% + 22px);left:50%;width:min(360px,64vw);height:1px;pointer-events:none;
-  background:linear-gradient(90deg,transparent,#c99a4c 20%,#8a6420 50%,#c99a4c 80%,transparent);box-shadow:0 0 14px 1px #c99a4c66;
+  background:linear-gradient(90deg,transparent,#e09ca5 20%,#fff1d6 50%,#f0b56a 80%,transparent);box-shadow:0 0 18px 1px #f0b56aaa;
   transform:translateX(-50%) scaleX(0);animation:luxe-line 1.3s .05s var(--ease) both}
 @keyframes luxe-curtain{0%,58%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-3%);visibility:hidden}}
 @keyframes luxe-line{0%{transform:translateX(-50%) scaleX(0);opacity:1}40%{transform:translateX(-50%) scaleX(1);opacity:1}62%{opacity:1}100%{transform:translateX(-50%) scaleX(1.4);opacity:0;visibility:hidden}}
