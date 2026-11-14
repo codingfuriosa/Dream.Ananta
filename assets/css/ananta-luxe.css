@@ -2,12 +2,14 @@
    Switch it off by removing <link rel="stylesheet" href="assets/css/ananta-luxe.css"> from index.html;
    the page works and looks complete without it. */
 
-/* 1. Arrival: the night opens on the original ANANTA mark. A warm horizon glow (ivory at its heart, then the site's
-   amber and rose, then night) lights the logo in its own colours; a horizon draws beneath it, then the curtain lifts */
+/* 1. Arrival: night, and first light on the horizon. A long flat band of warm light (ivory at its heart, then the site's
+   champagne, amber and rose) stretches across the screen with a faint dawn haze edge to edge; the original ANANTA
+   mark rests in it in its own colours, a horizon line draws beneath, then the curtain lifts onto the hero */
 main::before{content:'';position:fixed;inset:0;z-index:300;pointer-events:none;
   background:url('../images/web/ananta-logo.webp') center calc(50% - 34px)/min(230px,52vw) auto no-repeat,
-    radial-gradient(ellipse min(360px,76vw) min(165px,36vw) at 50% calc(50% - 30px),#fbf3e2 0%,#f8ecd5 24%,#f3e1c3eb 36%,#eed6b6b8 46%,#e8c8ab78 56%,#e2b9a640 67%,#dcaaa41a 79%,#d8a1a308 90%,#d8a1a300 100%),
-    radial-gradient(ellipse 55% 30% at 50% 58%,#e09ca538,#f0b56a12 45%,transparent 72%),var(--night);
+    radial-gradient(ellipse max(72vw,330px) min(104px,26vw) at 50% calc(50% - 30px),#fbf3e2 0%,#f8ecd5 22%,#f3e1c3e6 32%,#efd3adb3 42%,#eabb9675 53%,#e3a79a40 64%,#d9939c1c 76%,#c9879c08 88%,#c9879c00 100%),
+    linear-gradient(180deg,#0c102000 calc(50% - 190px),#3a2a4a40 calc(50% - 90px),#e09ca51f calc(50% - 30px),#3a2a4a40 calc(50% + 40px),#0c102000 calc(50% + 150px)),
+    radial-gradient(ellipse 60% 40% at 50% 46%,#1a1838,#0c1020 70%),var(--night);
   animation:luxe-curtain 1.3s .05s var(--ease) both}
 main::after{content:'';position:fixed;z-index:301;top:calc(50% + 22px);left:50%;width:min(360px,64vw);height:1px;pointer-events:none;
   background:linear-gradient(90deg,transparent,#e09ca5 20%,#fff1d6 50%,#f0b56a 80%,transparent);box-shadow:0 0 18px 1px #f0b56aaa;

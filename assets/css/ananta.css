@@ -93,14 +93,14 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.2}
    amber, rose) into the night blue before the menu, like first light. A gold hairline follows the light along the base. */
 .site-header{overflow-x:clip}
 .brand{position:relative;z-index:0;align-self:stretch;display:flex;align-items:center;line-height:0;padding-right:clamp(22px,2.2vw,40px)}
-/* the light (colour) and its fade (mask) are separate, so it melts into the night with no edge */
-.brand::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:-100vw;right:-56px;pointer-events:none;
-  background:linear-gradient(180deg,#ffffff40 0%,#ffffff00 46%,#5a3b1a12 100%),
-    linear-gradient(90deg,#eddcbc 0,#f7eedb calc(100% - 240px),#f4e4c3 calc(100% - 120px),#f0c98f calc(100% - 64px),#e6a596 100%);
-  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 104px),#000000d9 calc(100% - 78px),#0000008c calc(100% - 50px),#00000033 calc(100% - 22px),#0000 100%);
-  mask-image:linear-gradient(90deg,#000 calc(100% - 104px),#000000d9 calc(100% - 78px),#0000008c calc(100% - 50px),#00000033 calc(100% - 22px),#0000 100%)}
-.brand::after{content:'';position:absolute;z-index:-1;left:-100vw;right:-56px;bottom:0;height:1px;pointer-events:none;
-  background:linear-gradient(90deg,#c99a4c 0,#c99a4c calc(100% - 150px),#f0b56acc calc(100% - 80px),#e09ca500 100%)}
+/* After the logo the light eases through peach, dusty rose and mauve (never a muddy tan) into a long warm plum
+   afterglow that carries across the bar and melts into the night, so the right side never reads as flat black */
+.brand::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:-100vw;right:-420px;pointer-events:none;
+  background:linear-gradient(90deg,#eddcbc 0,#f7eedb calc(100% - 520px),#f5e8cf calc(100% - 458px),#f1dac6 calc(100% - 442px),#e6bbb2 calc(100% - 426px),#cf98a3f2 calc(100% - 408px),#a8728fe6 calc(100% - 388px),#80578ad9 calc(100% - 368px),#634579c9 calc(100% - 344px),#4f386ab5 calc(100% - 316px),
+      #44315fa3 calc(100% - 278px),#392a5585 calc(100% - 222px),#2c214a5c calc(100% - 160px),#1e173a33 calc(100% - 96px),#140f2c14 calc(100% - 42px),#0c102000 100%)}
+.desktop-nav a{text-shadow:0 0 10px #1a12267a,0 1px 2px #0c102099}
+.brand::after{content:'';position:absolute;z-index:-1;left:-100vw;right:-420px;bottom:0;height:1px;pointer-events:none;
+  background:linear-gradient(90deg,#c99a4c 0,#c99a4c calc(100% - 470px),#f0b56acc calc(100% - 420px),#e09ca580 calc(100% - 330px),#e09ca526 calc(100% - 160px),#e09ca500 100%)}
 .brand img{display:block;height:auto}
 .desktop-nav{margin-left:auto;display:flex;gap:34px}
 .desktop-nav a{position:relative;padding:10px 0;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--on-dark-muted);transition:color .3s}
