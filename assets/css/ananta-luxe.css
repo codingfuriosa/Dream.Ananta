@@ -57,3 +57,7 @@ h2{font-size:clamp(44px,5.2vw,80px);line-height:.98}
   .gallery-image span{font-size:20px}
 }
 @media (prefers-reduced-motion:reduce){main::before,main::after{display:none}}
+
+/* The coloured Ananta logo on the dark surfaces: a hairline champagne rim and a soft halo lift the green lettering off
+   the navy without any panel behind it (header, phone menu, strip above the footer) */
+.brand img,.menu-heading img,.horizon-strip img{filter:drop-shadow(0 0 1px #fff4dcf2) drop-shadow(0 0 9px #fff4dc8c) brightness(1.08) saturate(1.05)}
