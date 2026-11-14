@@ -34,7 +34,7 @@
   history.replaceState(null,'',location.pathname+location.hash);
   if(unlocked())setTimeout(download,500);
  }
- // "Book a site visit" lands on the form; if images shift the page mid-scroll, settle on it again.
+ // "Enquire now" lands on the form; if images shift the page mid-scroll, settle on it again.
  var enquiry=document.getElementById('enquiry');
  document.querySelectorAll('a[href="#enquiry"]').forEach(function(link){link.addEventListener('click',function(){
   setTimeout(function(){var top=enquiry.getBoundingClientRect().top,want=parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||0;if(Math.abs(top-want)>12)enquiry.scrollIntoView({block:'start'});},1100);
