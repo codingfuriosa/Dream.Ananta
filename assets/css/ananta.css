@@ -481,6 +481,12 @@ h2 em,h3 em{padding-right:.06em;background:linear-gradient(100deg,#7d5a1c 0%,var
   .section{padding:80px 0}
   .header-inner{padding:0 20px}
   .brand img{width:140px}
+  /* Phones: the same two colours, but the night arrives much sooner after the logo, so the bar reads dark */
+  .brand{--pad:22px}
+  .brand::before{background:linear-gradient(90deg,#f6ecd8 calc(100% - 778px),
+    color-mix(in oklch,#0c1020 18%,#f6ecd8) calc(100% - 756px),color-mix(in oklch,#0c1020 45%,#f6ecd8) calc(100% - 732px),
+    color-mix(in oklch,#0c1020 68%,#f6ecd8) calc(100% - 706px),color-mix(in oklch,#0c1020 82%,#f6ecd8) calc(100% - 672px),
+    color-mix(in oklch,#0c1020 91%,#f6ecd8) calc(100% - 620px),color-mix(in oklch,#0c1020 97%,#f6ecd8) calc(100% - 540px),#0c1020 calc(100% - 440px))}
   .site-header .header-visit{display:none}
   .menu-toggle{margin-left:auto}
   .section-top{display:block;margin-bottom:36px}
