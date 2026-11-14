@@ -87,7 +87,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.2}
 .menu-open .site-header::after{opacity:0}
 .site-header{position:sticky;top:0;z-index:35;background:var(--night);backdrop-filter:saturate(1.2) blur(12px);-webkit-backdrop-filter:saturate(1.2) blur(12px);color:var(--on-dark);transition:transform .5s var(--ease),background .5s var(--ease)}
 .header-inner{max-width:1440px;margin:auto;padding:0 28px 0 48px;min-height:var(--header);display:flex;align-items:center;gap:40px}
-.brand img{width:132px}
+.brand img{width:156px}
 /* The header logo is the dark-background version of the original (ananta-logo-on-dark.webp): the same green, gold and
    grey, lifted to jade, champagne and warm grey so they read on the navy bar */
 .brand{display:block;line-height:0}
@@ -465,7 +465,7 @@ h2 em,h3 em{padding-right:.06em;background:linear-gradient(100deg,#7d5a1c 0%,var
   .container{width:calc(100% - 40px)}
   .section{padding:80px 0}
   .header-inner{padding:0 20px}
-  .brand img{width:112px}
+  .brand img{width:140px}
   .site-header .header-visit{display:none}
   .menu-toggle{margin-left:auto}
   .section-top{display:block;margin-bottom:36px}
