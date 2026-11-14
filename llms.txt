@@ -30,8 +30,7 @@
 
 ## Key pages
 
-- [Dream Ananta: overview, plans, amenities, location and FAQ](https://dreamananta.com/)
-- [Dream Ananta FAQ](https://dreamananta.com/#faq)
+- [Dream Ananta: overview, plans, amenities and location](https://dreamananta.com/)
 - [Book a site visit](https://dreamananta.com/#visit)
 - [Verify RERA registration](https://rera.wb.gov.in)
 - [Jain Group](https://www.thejaingroup.com/)

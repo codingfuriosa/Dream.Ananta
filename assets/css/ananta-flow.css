@@ -186,27 +186,3 @@ main .eyebrow{display:none}
 /* Performance: these background photos wait until the visitor nears them (index.html adds .bg-on). Without JS they load as usual. */
 html.js .highlights:not(.bg-on)::before,html.js .gallery-section:not(.bg-on)::before,html.js .legacy:not(.bg-on)::before{background-image:none}
 html.js .horizon-strip:not(.bg-on){background-image:none}
-
-/* FAQ: Dream Ananta at a glance. Ivory, so it flows into the visit section below it */
-.faq{background:var(--ivory)}
-.section.faq{padding-top:clamp(64px,7vw,120px);padding-bottom:clamp(40px,4vw,64px)}
-.faq-grid{display:grid;gap:40px}
-.faq h2 em{font-style:italic;color:var(--gold-deep)}
-.faq-facts{margin:32px 0 0;border-top:1px solid var(--line)}
-.faq-facts>div{display:grid;grid-template-columns:7.5em 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
-.faq-facts dt{font:500 10.5px/1.9 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
-.faq-facts dd{margin:0;font-size:14px;line-height:1.6;color:var(--ink)}
-.faq-list{border-top:1px solid #c99a4c66}
-.faq-list details{border-bottom:1px solid #c99a4c4d}
-.faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0;cursor:pointer;list-style:none}
-.faq-list summary::-webkit-details-marker{display:none}
-.faq-list summary h3{margin:0;font:500 clamp(21px,1.7vw,28px)/1.25 var(--serif);color:var(--ink);transition:color .3s}
-.faq-list summary::after{content:'';flex:none;width:15px;height:15px;background:linear-gradient(var(--gold),var(--gold)) center/100% 1px no-repeat,linear-gradient(var(--gold),var(--gold)) center/1px 100% no-repeat;transition:transform .4s var(--ease)}
-.faq-list details[open] summary::after{transform:rotate(45deg)}
-.faq-list summary:hover h3,.faq-list details[open] summary h3{color:var(--gold-deep)}
-.faq-list summary:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
-.faq-list details p{max-width:62ch;margin:-6px 0 0;padding:0 40px 26px 0;color:var(--muted);line-height:1.8}
-@media (min-width:1001px){
-  .faq-grid{grid-template-columns:minmax(300px,.8fr) 1.2fr;gap:clamp(56px,6vw,120px);align-items:start}
-  .faq-head{position:sticky;top:calc(var(--header) + 40px)}
-}
