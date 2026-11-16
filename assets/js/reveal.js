@@ -30,12 +30,17 @@
     return {node: node, prefix: m[1], target: target, from: target > 1900 ? target - 12 : 0, suffix: m[3]};
   }).filter(Boolean);
   if (facts.length) {
-    facts.forEach(function (f) { f.node.parentNode.setAttribute('aria-label', f.node.parentNode.textContent); f.node.nodeValue = f.prefix + f.from + f.suffix; });
+    // The real figures stay in the page until the count starts (search engines and AI read them as ₹62, 2032 and so
+    // on); only their visibility waits, so the count is still seen from the start.
+    facts.forEach(function (f) { f.node.parentNode.setAttribute('aria-label', f.node.parentNode.textContent); f.node.parentNode.classList.add('count-wait'); });
     var factsRow = document.querySelector('.project-facts'), factsStarted = false;
     var countFacts = function () {
       if (factsStarted || factsRow.getBoundingClientRect().top > innerHeight * 0.88) return;
       factsStarted = true; removeEventListener('scroll', countFacts);
+      facts.forEach(function (f) { f.node.nodeValue = f.prefix + f.from + f.suffix; f.node.parentNode.classList.remove('count-wait'); });
       var start = performance.now();
+      var settle = function () { facts.forEach(function (f) { f.node.nodeValue = f.prefix + f.target + f.suffix; }); };
+      setTimeout(settle, 1400 + facts.length * 120 + 200);
       (function step() {
         var running = false;
         facts.forEach(function (f, i) {
@@ -88,9 +93,15 @@
     if (started || stats.getBoundingClientRect().top > innerHeight * 0.7) return;
     started = true; removeEventListener('scroll', check);
     // Let the row finish fading in, so the count is seen from 0.
-    setTimeout(function () { run(performance.now()); }, 500);
+    setTimeout(function () {
+      counters.forEach(function (c) { c.el.textContent = format(c, 0); c.el.classList.remove('count-wait'); });
+      run(performance.now());
+      // Whatever happens to animation frames, the real figures are back once the count's time is up.
+      setTimeout(function () { counters.forEach(function (c) { c.el.textContent = format(c, c.target); }); }, DURATION + counters.length * STAGGER + 200);
+    }, 500);
   }
-  counters.forEach(function (c) { c.el.setAttribute('aria-label', format(c, c.target)); c.el.textContent = format(c, 0); });
+  // The real figures stay in the page until the count starts; only their visibility waits.
+  counters.forEach(function (c) { c.el.setAttribute('aria-label', format(c, c.target)); c.el.classList.add('count-wait'); });
   addEventListener('scroll', check, {passive: true});
   check();
 })();
