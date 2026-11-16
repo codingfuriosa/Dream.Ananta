@@ -11,7 +11,8 @@
 - Configurations: 2 BHK, 3 BHK and 4 BHK flats
 - Total units: 232
 - Land area: 5.13 acres (approx. 20,760 sq m)
-- Towers: Blocks C, D and E, each G+8
+- Towers: 3 (Blocks C, D and E), each G+8
+- Location pin: 22.6772654, 88.4590634 (https://www.google.com/maps/search/?api=1&query=22.6772654%2C88.4590634)
 - Starting price: from ₹62 lakh; the exact price depends on configuration, block and floor (current price list from the site office)
 - RERA: WBRERA/P/NOR/2026/004487 (verify at https://rera.wb.gov.in)
 - Possession: scheduled for 2032 (under construction)
@@ -25,6 +26,7 @@
 
 ## What Dream Ananta is not
 
+- Not the earlier Dream Gurukul project. Dream Gurukul is registered under WBRERA/P/NOR/2023/000790; Dream Ananta is a new, separate phase on the same campus with its own registration (WBRERA/P/NOR/2026/004487), 232 units and possession in 2032. Unit counts, tower counts, prices, sizes and possession dates listed for Dream Gurukul on property portals do not apply to Dream Ananta.
 - Not ready to move in: possession is scheduled for 2032.
 - No 1 BHK flats, villas or plots.
 - Madhyamgram is a municipality in North 24 Parganas, not part of Kolkata Municipal Corporation.
