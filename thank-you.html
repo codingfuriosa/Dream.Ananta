@@ -23,6 +23,19 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 </script>
+<script>
+  /* Lead conversion for Google Tag Manager: the email and phone the visitor just entered (handed over once by the
+     enquiry form, in this tab only) go into dataLayer as leadsUserData, then are deleted from the browser at once.
+     Opening or reloading this page without a fresh enquiry sends nothing. */
+  (function(){
+    var ud=null;
+    try{ud=JSON.parse(sessionStorage.getItem('ananta_lead_ud')||'null');sessionStorage.removeItem('ananta_lead_ud');}catch(e){}
+    if(!ud||!ud.phone_number)return;
+    var data={phone_number:ud.phone_number};if(ud.email)data.email=ud.email;
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({'event':'formSubmitted','leadsUserData':data});
+  })();
+</script>
 <style>
 /* One screen, no scroll: the runway's vanishing point sits dead centre; the message waits above it. */
 html,body{height:100%;overflow:hidden;background:#000}

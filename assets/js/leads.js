@@ -79,10 +79,13 @@
    if(first){first.focus();return;}
    if(!consent){form.querySelector('[name=consent]').focus();return;}
    if(form.querySelector('[name=company]').value)return;
-   // Unlock the brochure on this browser and move on to the thank-you page. No contact data is persisted.
+   // Unlock the brochure on this browser and move on to the thank-you page. The lead's email and phone are handed
+   // to the thank-you page once, in this tab only (sessionStorage), for its formSubmitted conversion event; the
+   // thank-you page deletes them as soon as it has read them. Nothing else about the visitor is kept.
    function complete(){
     remember();
     try{sessionStorage.setItem(receiptKey,JSON.stringify({intent:form.dataset.intent,confirmedAt:Date.now()}));}catch(storageError){}
+    try{var ud={phone_number:values.mobile};if(values.email)ud.email=values.email.toLowerCase();sessionStorage.setItem('ananta_lead_ud',JSON.stringify(ud));}catch(storageError){}
     window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'generate_lead',form:form.dataset.intent});
     location.assign(config.thankYou+'?intent='+encodeURIComponent(form.dataset.intent));
    }
