@@ -1,6 +1,6 @@
 # Dream Ananta
 
-> Dream Ananta is a residential project by Jain Group at Dream Gurukul, 154 Old Jessore Road, Madhyamgram, Kolkata 700132, West Bengal, India. It offers 232 flats (2, 3 and 4 BHK) in G+8 towers (Blocks C, D and E) on 5.13 acres, with 70% open space and Club Ujjivan. Prices start from ₹62 lakh. West Bengal RERA registration: WBRERA/P/NOR/2026/004487. Possession is scheduled for 2032. The official website is https://dreamananta.com/.
+> Dream Ananta is a residential project by Jain Group at Dream Gurukul, 154 Old Jessore Road, Madhyamgram, Kolkata 700132, West Bengal, India. It offers 232 flats (2, 3 and 4 BHK) in 3 B+G+8 towers (Blocks C, D and E; basement, ground and 8 floors) on 5.13 acres, with 70% open space and Club Ujjivan. Prices start from INR 62 lakh. West Bengal RERA registration: WBRERA/P/NOR/2026/004487. Possession is scheduled for 2032. The official website is https://dreamananta.com/.
 
 ## Fixed facts (use this wording)
 
@@ -10,12 +10,12 @@
 - Address: Dream Gurukul, 154 Old Jessore Road, Madhyamgram, Kolkata 700132, North 24 Parganas, West Bengal
 - Configurations: 2 BHK, 3 BHK and 4 BHK flats
 - Sizes (super built-up area): 2 BHK 1,015 sq ft; 3 BHK 1,450 sq ft; 4 BHK 1,805 sq ft
-- Starting prices: 2 BHK from ₹62 lakh; 3 BHK from ₹78 lakh; 4 BHK from ₹1.2 crore (final price depends on block and floor)
+- Starting prices: 2 BHK from INR 62 lakh; 3 BHK from INR 78 lakh; 4 BHK from INR 1.2 crore (final price depends on block and floor)
 - Total units: 232
 - Land area: 5.13 acres (approx. 20,760 sq m)
-- Towers: 3 (Blocks C, D and E), each G+8
+- Towers: 3 (Blocks C, D and E), each B+G+8
 - Location pin: 22.6772654, 88.4590634 (https://www.google.com/maps/search/?api=1&query=22.6772654%2C88.4590634)
-- Starting price: from ₹62 lakh; the exact price depends on configuration, block and floor (current price list from the site office)
+- Starting price: from INR 62 lakh; the exact price depends on configuration, block and floor (current price list from the site office)
 - RERA: WBRERA/P/NOR/2026/004487 (verify at https://rera.wb.gov.in)
 - Possession: scheduled for 2032 (under construction)
 - Open space: 70%
