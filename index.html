@@ -189,11 +189,32 @@
       "hasMap": "https://www.google.com/maps/search/?api=1&query=22.6772654%2C88.4590634&query_place_id=ChIJi5NeJOqf-DkRIYMMZLUPxjY",
       "telephone": "+917353158222",
       "numberOfAccommodationUnits": 232,
-      "accommodationFloorPlan": {
-        "@type": "FloorPlan",
-        "name": "2, 3 & 4 BHK residences",
-        "numberOfBedrooms": "2-4"
-      },
+      "accommodationFloorPlan": [
+        {
+          "@type": "FloorPlan",
+          "@id": "https://dreamananta.com/#plan-2bhk",
+          "name": "2 BHK at Dream Ananta",
+          "numberOfBedrooms": 2,
+          "floorSize": { "@type": "QuantitativeValue", "value": 1015, "unitCode": "FTK", "unitText": "sq ft (super built-up area)" },
+          "description": "2 BHK, 1,015 sq ft super built-up area, starting from ₹62 lakh"
+        },
+        {
+          "@type": "FloorPlan",
+          "@id": "https://dreamananta.com/#plan-3bhk",
+          "name": "3 BHK at Dream Ananta",
+          "numberOfBedrooms": 3,
+          "floorSize": { "@type": "QuantitativeValue", "value": 1450, "unitCode": "FTK", "unitText": "sq ft (super built-up area)" },
+          "description": "3 BHK, 1,450 sq ft super built-up area, starting from ₹78 lakh"
+        },
+        {
+          "@type": "FloorPlan",
+          "@id": "https://dreamananta.com/#plan-4bhk",
+          "name": "4 BHK at Dream Ananta",
+          "numberOfBedrooms": 4,
+          "floorSize": { "@type": "QuantitativeValue", "value": 1805, "unitCode": "FTK", "unitText": "sq ft (super built-up area)" },
+          "description": "4 BHK, 1,805 sq ft super built-up area, starting from ₹1.2 crore"
+        }
+      ],
       "petsAllowed": true,
       "tourBookingPage": "https://dreamananta.com/#enquiry",
       "identifier": {
@@ -361,23 +382,45 @@
         { "@type": "LocationFeatureSpecification", "name": "70% open space", "value": true }
       ],
       "offers": {
-        "@type": "Offer",
+        "@type": "AggregateOffer",
         "@id": "https://dreamananta.com/#offer",
-        "name": "2, 3 & 4 BHK residences at Ananta",
+        "name": "2, 3 & 4 BHK residences at Dream Ananta",
         "url": "https://dreamananta.com/#plans",
         "priceCurrency": "INR",
-        "price": "6200000",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "priceCurrency": "INR",
-          "minPrice": "6200000",
-          "description": "Starting from ₹62 Lakhs"
-        },
+        "lowPrice": "6200000",
+        "offerCount": 3,
+        "description": "Starting prices: 2 BHK from ₹62 lakh, 3 BHK from ₹78 lakh, 4 BHK from ₹1.2 crore. The final price depends on block and floor.",
         "availability": "https://schema.org/InStock",
-        "businessFunction": "http://purl.org/goodrelations/v1#Sell",
-        "seller": {
-          "@id": "https://dreamananta.com/#jaingroup"
-        }
+        "seller": { "@id": "https://dreamananta.com/#jaingroup" },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "2 BHK at Dream Ananta, from ₹62 lakh",
+            "priceCurrency": "INR",
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "INR", "minPrice": "6200000", "description": "Starting from ₹62 lakh" },
+            "itemOffered": { "@type": "Apartment", "name": "2 BHK", "numberOfBedrooms": 2, "floorSize": { "@type": "QuantitativeValue", "value": 1015, "unitCode": "FTK", "unitText": "sq ft (super built-up area)" } },
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://dreamananta.com/#jaingroup" }
+          },
+          {
+            "@type": "Offer",
+            "name": "3 BHK at Dream Ananta, from ₹78 lakh",
+            "priceCurrency": "INR",
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "INR", "minPrice": "7800000", "description": "Starting from ₹78 lakh" },
+            "itemOffered": { "@type": "Apartment", "name": "3 BHK", "numberOfBedrooms": 3, "floorSize": { "@type": "QuantitativeValue", "value": 1450, "unitCode": "FTK", "unitText": "sq ft (super built-up area)" } },
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://dreamananta.com/#jaingroup" }
+          },
+          {
+            "@type": "Offer",
+            "name": "4 BHK at Dream Ananta, from ₹1.2 crore",
+            "priceCurrency": "INR",
+            "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "INR", "minPrice": "12000000", "description": "Starting from ₹1.2 crore" },
+            "itemOffered": { "@type": "Apartment", "name": "4 BHK", "numberOfBedrooms": 4, "floorSize": { "@type": "QuantitativeValue", "value": 1805, "unitCode": "FTK", "unitText": "sq ft (super built-up area)" } },
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": "https://dreamananta.com/#jaingroup" }
+          }
+        ]
       }
     },
     {
