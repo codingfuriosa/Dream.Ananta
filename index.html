@@ -52,7 +52,7 @@
 </script>
 
 
-<script>document.documentElement.classList.add('js');(function(){var d=document.documentElement;try{if(localStorage.getItem('ananta_access')==='confirmed'||document.cookie.split('; ').indexOf('ananta_access=confirmed')>-1)return;}catch(e){}d.classList.add('is-locked');})();</script>
+<script>document.documentElement.classList.add('js');(function(){var gate=false;/* true: an enquiry is needed before the brochure and floor plans open (also set gate in assets/js/lead-config.js) */if(!gate)return;var d=document.documentElement;try{if(localStorage.getItem('ananta_access')==='confirmed'||document.cookie.split('; ').indexOf('ananta_access=confirmed')>-1)return;}catch(e){}d.classList.add('is-locked');})();</script>
 <link rel="stylesheet" href="assets/css/ananta.css">
 <!-- Luxe layer: remove the next line to switch the bold premium finishes off -->
 <link rel="stylesheet" href="assets/css/ananta-luxe.css">

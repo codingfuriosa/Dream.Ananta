@@ -14,7 +14,7 @@ A static landing page for Ananta at Dream Gurukul by Jain Group. No build step: 
 Palette from the brochure: midnight navy, rose-amber horizon glow, golden-hour gold, cream and warm brown. Headlines in Cormorant Garamond, text in Jost.
 
 ## Enquiries
-- One enquiry (site visit or brochure popup) unlocks both the brochure and the floor plans on that browser for a year. Until then the plans are shown hazy behind a View plans button.
+- The brochure and the floor plans are open: Download brochure saves the PDF at once and every floor sheet shows in full. The enquiry gate is switched off with `gate: false` in `assets/js/lead-config.js` and `var gate=false` in the index.html head script; set both to true to require one enquiry before they open (the forms and the thank-you flow are still in place).
 - Phone numbers are accepted from any country. A bare 10-digit number is saved as +91.
 - **Leads go to the Jain Group CRM.** `assets/js/lead-config.js` posts each enquiry form-encoded to the realtybucket.com webhook with the API key and project name `Ananta`; `leads.js` also forwards the ad parameters from the landing URL (utm_*, gclid, fbclid and so on) kept in sessionStorage. Clear `endpoint` to stop sending: the form then only unlocks the brochure and shows the thank-you page. `call-tracking.js` swaps every call button to the number in `?contactid=` for the visit. `.htaccess` sends www and plain http to https://dreamananta.com (Apache only).
 - The brochure and plan images are public files; the unlock is a lead-generation flow, not secure access.

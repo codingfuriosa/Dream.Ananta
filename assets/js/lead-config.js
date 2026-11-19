@@ -6,6 +6,7 @@ window.ANANTA_LEADS = {
  endpoint: 'https://www.realtybucket.com/webhook/website_form_data',
  apikey: 'kG6vgYgUqEmnHUtHX15pNQ',
  project: 'Ananta',
+ gate: false, // false: the brochure downloads and the floor plans show without an enquiry (same switch in the index.html head script)
  brochure: 'assets/brochures/ananta-lifestyle.pdf',
  thankYou: 'thank-you.html'
 };

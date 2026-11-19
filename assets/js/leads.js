@@ -12,6 +12,7 @@
  // One enquiry, from either form, unlocks the brochure and the floor plans on this browser:
  // localStorage first, a year-long cookie as backup.
  function unlocked(){
+  if(config.gate===false)return true;
   try{if(localStorage.getItem(accessKey)==='confirmed')return true;}catch(e){}
   return document.cookie.split('; ').indexOf(accessKey+'=confirmed')>-1;
  }
